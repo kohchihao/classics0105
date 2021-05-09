@@ -58,7 +58,7 @@ export default function SimpleThreeColumns() {
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         <Feature
           icon={<Icon as={GiHouse} w={10} h={10} color="black" />}
-          title={'F.O.C Disposal'}
+          title={'F.O.C Disposal of items that are recyclable'}
           text={
             'F.O.C Disposal of used furnitures from hotel, schools, offices, gym, dormitory, hospital, and many others'
           }

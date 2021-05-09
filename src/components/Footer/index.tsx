@@ -106,16 +106,18 @@ export default function LargeWithNewsletter() {
             <ListHeader>Operating Hotline</ListHeader>
             <Link
               fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
+              href={'tel:91841433'}
+            >
+              Ms. Pauline (9184 1433)
+            </Link>
+
+            <Link
+              fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
               href={'tel:91231952'}
             >
               Mr. Mohammad (9123 1952)
             </Link>
-            <Link
-              fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
-              href={'tel:91841433'}
-            >
-              Mdm. Ang (9184 1433)
-            </Link>
+           
 
             <ListHeader>Email</ListHeader>
             <Link
