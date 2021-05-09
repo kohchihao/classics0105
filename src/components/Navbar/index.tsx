@@ -10,26 +10,21 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import {
-  HamburgerIcon,
-  CloseIcon,
-} from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { SiWhatsapp } from 'react-icons/si';
+import { handleWhatsApp, getWhatsAppMessageTemplate } from '@utils';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box  position="fixed" top="0" width="100%" zIndex="999">
+    <Box position="fixed" top="0" width="100%" zIndex="999">
       <Flex
         bg={'white'}
         color={'gray.600'}
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={'gray.200'}
         align={'center'}
       >
         <Flex
@@ -37,13 +32,18 @@ export default function WithSubnavigation() {
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
         >
-          <IconButton
+          {/* <IconButton
             onClick={onToggle}
             icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+              isOpen ? (
+                <CloseIcon w={3} h={3} color="gray.700" />
+              ) : (
+                <HamburgerIcon w={5} h={5} color="gray.700" />
+              )
             }
             aria-label={'Toggle Navigation'}
-          />
+            variant={'ghost'}
+          /> */}
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Text
@@ -80,6 +80,7 @@ export default function WithSubnavigation() {
               bg: '#25D368',
             }}
             rounded={'full'}
+            onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate()})}
           >
             WhatsApp
           </Button>
@@ -119,11 +120,7 @@ const DesktopNav = () => {
 
 const MobileNav = () => {
   return (
-    <Stack
-      bg={'white'}
-      p={4}
-      display={{ md: 'none' }}
-    >
+    <Stack bg={'white'} p={4} display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -146,10 +143,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           textDecoration: 'none',
         }}
       >
-        <Text
-          fontWeight={600}
-          color={'gray.600'}
-        >
+        <Text fontWeight={600} color={'gray.600'}>
           {label}
         </Text>
       </Flex>
@@ -164,6 +158,4 @@ interface NavItem {
   href?: string;
 }
 
-const NAV_ITEMS: Array<NavItem> = [
-  
-];
+const NAV_ITEMS: Array<NavItem> = [];

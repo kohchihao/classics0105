@@ -8,6 +8,8 @@ import {
 } from '@chakra-ui/react';
 import { SiWhatsapp } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
+import { handleWhatsApp, getWhatsAppMessageTemplate, getMailTemplate } from '@utils';
+
 
 export default function WithBackgroundImage() {
   return (
@@ -65,17 +67,19 @@ export default function WithBackgroundImage() {
                   bg: '#25D368',
                 }}
                 rounded={'full'}
+                onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate()})}
               >
                 WhatsApp
               </Button>
 
               <Button
+                as={"a"}
                 leftIcon={<HiOutlineMail />}
                 fontSize={'sm'}
                 fontWeight={600}
                 color={'white'}
                 colorScheme="blue"
-                href={'#'}
+                href={getMailTemplate()}
                 rounded={'full'}
               >
                 Email
