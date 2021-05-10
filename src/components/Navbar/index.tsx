@@ -80,7 +80,7 @@ export default function WithSubnavigation() {
               bg: '#25D368',
             }}
             rounded={'full'}
-            onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate()})}
+            onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate(), scenario: 'navbar'})}
           >
             WhatsApp
           </Button>

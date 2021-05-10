@@ -1,3 +1,5 @@
+import { onWhatsAppButtonClicked } from '@utils/tracking'
+
 export const handleWhatsApp = ({
   hp,
   msg,
@@ -7,6 +9,7 @@ export const handleWhatsApp = ({
   msg: string;
   scenario?: string;
 }) => {
+  onWhatsAppButtonClicked(scenario);
   // https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat/?lang=en
   const url = `https://wa.me/65${hp}?text=${msg}`;
   window.open(url, '_blank'); //to open new page

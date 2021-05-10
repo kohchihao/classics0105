@@ -9,7 +9,7 @@ import {
 import { SiWhatsapp } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
 import { handleWhatsApp, getWhatsAppMessageTemplate, getMailTemplate } from '@utils';
-
+import { onEmailButtonClicked } from '@utils/tracking'
 
 export default function WithBackgroundImage() {
   return (
@@ -67,7 +67,7 @@ export default function WithBackgroundImage() {
                   bg: '#25D368',
                 }}
                 rounded={'full'}
-                onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate()})}
+                onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate(), scenario: 'hero'})}
               >
                 WhatsApp
               </Button>
@@ -81,6 +81,9 @@ export default function WithBackgroundImage() {
                 colorScheme="blue"
                 href={getMailTemplate()}
                 rounded={'full'}
+                onClick={() => {
+                  onEmailButtonClicked();
+                }}
               >
                 Email
               </Button>
