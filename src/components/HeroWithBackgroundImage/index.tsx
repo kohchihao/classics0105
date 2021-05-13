@@ -47,7 +47,7 @@ export default function WithBackgroundImage() {
             projects.
           </Text>
 
-          <Stack spacing={0} align={'flex-start'}>
+          <Stack spacing={2} align={'flex-start'}>
             <Text
               color={'white'}
               fontWeight={400}

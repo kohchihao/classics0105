@@ -23,8 +23,7 @@ export default function WithSubnavigation() {
       <Flex
         bg={'white'}
         color={'gray.600'}
-        minH={'60px'}
-        py={{ base: 2 }}
+        minH={{ base: '50px', md: '60px'}}
         px={{ base: 4 }}
         align={'center'}
       >
@@ -48,10 +47,10 @@ export default function WithSubnavigation() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Image
-            src="/images/icon.png"
+            src="/images/icon_3.svg"
             alt="Picture of the author"
-            width={40}
-            height={40}
+            width={150}
+            height={30}
           />
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
