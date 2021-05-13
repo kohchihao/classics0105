@@ -18,6 +18,7 @@ import {
   onMohammadClicked,
   onEmailAddressClicked,
 } from '@utils/tracking';
+import { ExternalLinkIcon, PhoneIcon, EmailIcon } from '@chakra-ui/icons'
 
 const SocialButton = ({
   children,
@@ -109,7 +110,7 @@ export default function LargeWithNewsletter() {
               fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
               href={'tel:91841433'}
             >
-              Ms. Pauline (9184 1433)
+              <PhoneIcon mx="2px" /> Ms. Pauline (9184 1433) 
             </Link>
 
             <Link
@@ -117,7 +118,7 @@ export default function LargeWithNewsletter() {
               fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
               href={'tel:91231952'}
             >
-              Mr. Mohammad (9123 1952)
+              <PhoneIcon mx="2px" /> Mr. Mohammad (9123 1952) 
             </Link>
 
             <ListHeader>Email</ListHeader>
@@ -126,7 +127,7 @@ export default function LargeWithNewsletter() {
               fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
               href="mail:helloclassics0105@gmail.com"
             >
-              helloclassics0105@gmail.com
+               <EmailIcon mx="2px" /> helloclassics0105@gmail.com
             </Link>
           </Stack>
           <Stack align={'flex-start'}>
@@ -135,7 +136,7 @@ export default function LargeWithNewsletter() {
               fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
               href="https://goo.gl/maps/EwX3UQTkTw1eLhnJ6"
             >
-              6 Sungei Kadut Ave
+              6 Sungei Kadut Ave <ExternalLinkIcon mx="2px" />
             </Link>
           </Stack>
         </SimpleGrid>
