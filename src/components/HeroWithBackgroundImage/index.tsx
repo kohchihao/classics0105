@@ -5,24 +5,32 @@ import {
   Text,
   VStack,
   useBreakpointValue,
+  Box,
 } from '@chakra-ui/react';
 import { SiWhatsapp } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
-import { handleWhatsApp, getWhatsAppMessageTemplate, getMailTemplate } from '@utils';
-import { onEmailButtonClicked } from '@utils/tracking'
+import {
+  handleWhatsApp,
+  getWhatsAppMessageTemplate,
+  getMailTemplate,
+} from '@utils';
+import { onEmailButtonClicked } from '@utils/tracking';
+import Image from 'next/image';
 
 export default function WithBackgroundImage() {
   return (
-    <Flex
-      w={'full'}
-      h={'100vh'}
-      backgroundImage={
-        'url(https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)'
-      }
-      backgroundSize={'cover'}
-      backgroundPosition={'center center'}
-    >
+    <Flex w={'full'} h={'100vh'}>
+      <Box position="absolute" height="100vh" width="100vw" overflow="hidden">
+        <Image
+          src="/images/background.jpg"
+          layout="fill"
+          objectFit="cover"
+          quality={50}
+        />
+      </Box>
+
       <VStack
+        zIndex={1}
         w={'full'}
         justify={'center'}
         px={useBreakpointValue({ base: 4, md: 8 })}
@@ -67,13 +75,19 @@ export default function WithBackgroundImage() {
                   bg: '#25D368',
                 }}
                 rounded={'full'}
-                onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate(), scenario: 'hero'})}
+                onClick={() =>
+                  handleWhatsApp({
+                    hp: '91841433',
+                    msg: getWhatsAppMessageTemplate(),
+                    scenario: 'hero',
+                  })
+                }
               >
                 WhatsApp
               </Button>
 
               <Button
-                as={"a"}
+                as={'a'}
                 leftIcon={<HiOutlineMail />}
                 fontSize={'sm'}
                 fontWeight={600}

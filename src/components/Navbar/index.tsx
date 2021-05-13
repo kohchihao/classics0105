@@ -13,6 +13,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { SiWhatsapp } from 'react-icons/si';
 import { handleWhatsApp, getWhatsAppMessageTemplate } from '@utils';
+import Image from 'next/image';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -46,13 +47,12 @@ export default function WithSubnavigation() {
           /> */}
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={'gray.800'}
-          >
-            Logo
-          </Text>
+          <Image
+            src="/images/icon.png"
+            alt="Picture of the author"
+            width={40}
+            height={40}
+          />
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -80,7 +80,13 @@ export default function WithSubnavigation() {
               bg: '#25D368',
             }}
             rounded={'full'}
-            onClick={() => handleWhatsApp({ hp: '91841433', msg: getWhatsAppMessageTemplate(), scenario: 'navbar'})}
+            onClick={() =>
+              handleWhatsApp({
+                hp: '91841433',
+                msg: getWhatsAppMessageTemplate(),
+                scenario: 'navbar',
+              })
+            }
           >
             WhatsApp
           </Button>
