@@ -53,7 +53,7 @@ export default function WithBackgroundImage() {
               fontWeight={400}
               fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
             >
-              Contact us for quotations now!
+              Contact us for more information!
             </Text>
             <Stack
               flex={{ base: 1, md: 0 }}
