@@ -8,7 +8,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { FaFileContract } from 'react-icons/fa';
-import { GiElectricalResistance, GiHouse } from 'react-icons/gi';
+import { GiHouse } from 'react-icons/gi';
 
 interface FeatureProps {
   title: string;
@@ -58,28 +58,20 @@ export default function SimpleThreeColumns() {
       >
         Services we provide
       </Text>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Feature
           icon={<Icon as={GiHouse} w={10} h={10} color="black" />}
-          title={'F.O.C* Disposal of items that are recyclable'}
+          title={'Free* disposal of furniture, appliances, and any recyclable items'}
           text={
-            'F.O.C* Disposal of used furnitures from hotel, schools, offices, gym, dormitory, hospital, and many others'
+            'We provide free and efficient disposal services to commercial projects (offices, hotels,  schools, dormitories, hospitals, etc) and residential units. Other than used furniture and fixtures, we also help to dispose of construction debris like waste metal and wood.'
           }
           subtitle={'* Terms and conditions applies'}
         />
-        <Feature
-          icon={
-            <Icon as={GiElectricalResistance} w={10} h={10} color="black" />
-          }
-          title={'Disposal of faulty/condemned'}
-          text={
-            'Disposal of metal, paper, faulty or condemned electrical items'
-          }
-        />
+       
         <Feature
           icon={<Icon as={FaFileContract} w={10} h={10} color="black" />}
           title={'Term contract'}
-          text={'Term contract for disposal of all kinds of items'}
+          text={'We provide short and long-term contracts for disposal services of all kinds of items.'}
         />
       </SimpleGrid>
     </Flex>
