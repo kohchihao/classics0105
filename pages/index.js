@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import HeroWithBackgroundImage from '@components/HeroWithBackgroundImage';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
