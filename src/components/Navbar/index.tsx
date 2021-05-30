@@ -48,9 +48,9 @@ export default function WithSubnavigation() {
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Image
             src="/images/icon_3.svg"
-            alt="Picture of the author"
             width={150}
             height={30}
+            alt="Company Icon"
           />
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>

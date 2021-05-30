@@ -26,6 +26,7 @@ export default function WithBackgroundImage() {
           layout="fill"
           objectFit="cover"
           quality={50}
+          alt="background image"
         />
       </Box>
 
@@ -38,6 +39,7 @@ export default function WithBackgroundImage() {
       >
         <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
           <Text
+            as="h1"
             color={'white'}
             fontWeight={700}
             lineHeight={1.2}
