@@ -1,14 +1,14 @@
-const title = 'Classics0105';
+const title = 'Disposal services for Singapore Commercial & Residential | Furniture & 2nd hand | Classics0105';
 const description = 'We provide disposal services from residential units to commercial projects.';
 
 const SEO = {
   title,
   description,
-  canonical: 'https://classics0105.vercel.app/',
+  canonical: 'https://www.classics0105.com.sg',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://classics0105.vercel.app/',
+    url: 'https://www.classics0105.com.sg',
     title,
     description,
     images: [
