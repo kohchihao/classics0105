@@ -16,17 +16,19 @@ import {
 } from '@utils';
 import { onEmailButtonClicked } from '@utils/tracking';
 import Image from 'next/image';
+import backgroundImage from '../../../public/images/background.jpg';
 
 export default function WithBackgroundImage() {
   return (
     <Flex w={'full'} h={'100vh'}>
       <Box position="absolute" height="100vh" width="100vw" overflow="hidden">
         <Image
-          src="/images/background.jpg"
+          src={backgroundImage}
           layout="fill"
           objectFit="cover"
           quality={50}
           alt="background image"
+          placeholder="blur"
         />
       </Box>
 

@@ -10,7 +10,7 @@ const DefaultImageSize = {
   width: 1200,
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const og = async (req: NextApiRequest, res: NextApiResponse) => {
   const { title, subtitle} = req.query;
   try {
     const html = getHtml(title, subtitle);
@@ -33,3 +33,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.end('<h1>Error, image can not be generated!</h1>');
   }
 };
+
+export default og; 
