@@ -47,11 +47,12 @@ const Feature = ({ title, text, icon, subtitle }: FeatureProps) => {
 export default function SimpleThreeColumns() {
   return (
     <Flex
-      p={{ base: 10, md: 50, lg: 100 }}
+      px={{ base: 5, md: 50, lg: 100 }}
+      py={{ base: 10, md: 50, lg: 100 }}
       maxW="1200px"
       margin="auto"
-      bg="white"
       direction="column"
+      backgroundColor=""
     >
       <Text
         color={'black'}
