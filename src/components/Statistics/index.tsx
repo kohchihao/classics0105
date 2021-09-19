@@ -6,7 +6,15 @@ import {
   StatLabel,
   StatNumber,
   useColorModeValue,
+  Text,
 } from '@chakra-ui/react';
+import Image from 'next/image';
+import damaipri from '../../../public/images/damai-primary-school.jpg';
+import jurongwestsec from '../../../public/images/jurong-west-secondary-school.png';
+import outramsec from '../../../public/images/outram-secondary-school.jpg';
+import punggolsec from '../../../public/images/punggol-secondary-school.png';
+import anchorgreenpri from '../../../public/images/anchor-green-primary-school.jpg';
+import chijpri from '../../../public/images/chij-our-lady-of-good-counsel.png';
 
 interface StatsCardProps {
   title: string;
@@ -58,6 +66,93 @@ export default function BasicStatistics() {
         <StatsCard title={'All'} stat={'over Singapore 🇸🇬'} />
         <StatsCard title={'In'} stat={'the past 5 years 🕔'} />
       </SimpleGrid>
+
+      <SimpleGrid mt={10} columns={{ base: 2, md: 4, lg: 6 }} spacing={10}>
+        <Box
+          width="150px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={damaipri}
+            quality={50}
+            alt="background image"
+            placeholder="blur"
+          />
+        </Box>
+
+        <Box
+          width="150px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={jurongwestsec}
+            quality={50}
+            alt="background image"
+            placeholder="blur"
+          />
+        </Box>
+
+        <Box
+          width="150px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={outramsec}
+            quality={50}
+            alt="background image"
+            placeholder="blur"
+          />
+        </Box>
+
+        <Box
+          width="150px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={punggolsec}
+            quality={50}
+            alt="background image"
+            placeholder="blur"
+          />
+        </Box>
+        <Box
+          width="150px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={anchorgreenpri}
+            quality={50}
+            alt="background image"
+            placeholder="blur"
+          />
+        </Box>
+        <Box
+          width="150px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={chijpri}
+            quality={50}
+            alt="background image"
+            placeholder="blur"
+          />
+        </Box>
+      </SimpleGrid>
+      <Text mt={5} textAlign="center" fontSize={'xs'} color={'gray.600'}>
+        and many more :)
+      </Text>
     </Box>
   );
 }
