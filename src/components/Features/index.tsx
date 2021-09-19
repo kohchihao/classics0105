@@ -32,10 +32,14 @@ const Feature = ({ title, text, icon, subtitle }: FeatureProps) => {
       >
         {icon}
       </Flex>
-      <Text fontWeight={600} color={'gray.800'}>{title}</Text>
+      <Text fontWeight={600} color={'gray.800'}>
+        {title}
+      </Text>
       <Text color={'gray.600'}>{text}</Text>
 
-      <Text fontSize={'xs'}color={'gray.600'}>{subtitle}</Text>
+      <Text fontSize={'xs'} color={'gray.600'}>
+        {subtitle}
+      </Text>
     </Stack>
   );
 };
@@ -43,11 +47,12 @@ const Feature = ({ title, text, icon, subtitle }: FeatureProps) => {
 export default function SimpleThreeColumns() {
   return (
     <Flex
-      p={{ base: 10, md: 50, lg: 100 }}
+      px={{ base: 5, md: 50, lg: 100 }}
+      py={{ base: 10, md: 50, lg: 100 }}
       maxW="1200px"
       margin="auto"
-      bg="white"
       direction="column"
+      backgroundColor=""
     >
       <Text
         color={'black'}
@@ -61,17 +66,18 @@ export default function SimpleThreeColumns() {
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Feature
           icon={<Icon as={GiHouse} w={10} h={10} color="black" />}
-          title={'Free* disposal of furniture, appliances, and any recyclable items'}
+          title={'Disposal of furniture, appliances, and any recyclable items'}
           text={
-            'We provide free and efficient disposal services to commercial projects (offices, hotels,  schools, dormitories, hospitals, etc) and residential units. Other than used furniture and fixtures, we also help to dispose of construction debris like waste metal and wood.'
+            'We provide efficient disposal services to commercial projects (offices, hotels,  schools, dormitories, hospitals, etc) and residential units. Other than used furniture and fixtures, we also help to dispose of construction debris like waste metal and wood.'
           }
-          subtitle={'* Terms and conditions applies'}
         />
-       
+
         <Feature
           icon={<Icon as={FaFileContract} w={10} h={10} color="black" />}
           title={'Term contract'}
-          text={'We provide short and long-term contracts for disposal services of all kinds of items.'}
+          text={
+            'We provide short and long-term contracts for disposal services of all kinds of items.'
+          }
         />
       </SimpleGrid>
     </Flex>
