@@ -52,6 +52,19 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// v1 Stack spacing set margin-top on every child after the first and forced
+// that child's other margins to 0. v3 gap leaves the heading's mb intact,
+// which opens an extra 8px under the second heading.
+const v1StackSpacing = {
+  gap: 0,
+  css: {
+    '& > :not(style) ~ :not(style)': {
+      marginTop: '0.5rem',
+      marginBottom: '0',
+    },
+  },
+} as const;
+
 export default function LargeWithNewsletter() {
   return (
     <Box bg={'gray.50'} color={'gray.700'}>
@@ -89,7 +102,7 @@ export default function LargeWithNewsletter() {
               </SocialButton>
             </Stack>
           </Stack>
-          <Stack align={'flex-start'}>
+          <Stack align={'flex-start'} {...v1StackSpacing}>
             <ListHeader>Operating Hotline</ListHeader>
             <Link
               fontSize={{ base: 'sm', md: 'xs' }}
@@ -106,7 +119,7 @@ export default function LargeWithNewsletter() {
                <EmailIcon mx="2px" /> helloclassics0105@gmail.com
             </Link>
           </Stack>
-          <Stack align={'flex-start'}>
+          <Stack align={'flex-start'} {...v1StackSpacing}>
             <ListHeader>Location</ListHeader>
             <Link
               fontSize={{ base: 'sm', md: 'xs' }}

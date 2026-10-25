@@ -102,6 +102,9 @@ const config = defineConfig({
             md: {
               h: '10',
               minW: '10',
+              // Drop textStyle "sm". It sets line-height to 1.25rem (20px)
+              // after the base 1.2, so the label sits off the v1 19.2px line.
+              textStyle: 'none',
               fontSize: 'md',
               px: '4',
               gap: '2',
