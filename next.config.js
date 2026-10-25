@@ -5,6 +5,10 @@ const nextConfig = {
     // The hero and organization images request quality 50.
     qualities: [50, 75],
   },
+  experimental: {
+    // Chakra v3 and react-icons are barrel files. Load only the modules used.
+    optimizePackageImports: ['@chakra-ui/react', 'react-icons'],
+  },
 };
 
 module.exports = nextConfig;

@@ -2,21 +2,18 @@ import {
   Box,
   Flex,
   Text,
-  IconButton,
   Button,
   Stack,
-  Collapse,
+  Collapsible,
   Link,
-  useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { SiWhatsapp } from 'react-icons/si';
 import { handleWhatsApp, getWhatsAppMessageTemplate } from '@utils';
 import Image from 'next/image';
 
 export default function WithSubnavigation() {
-  const { isOpen, onToggle } = useDisclosure();
+  const { open } = useDisclosure();
 
   return (
     <Box position="fixed" top="0" width="100%" zIndex="999">
@@ -31,20 +28,7 @@ export default function WithSubnavigation() {
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
-        >
-          {/* <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? (
-                <CloseIcon w={3} h={3} color="gray.700" />
-              ) : (
-                <HamburgerIcon w={5} h={5} color="gray.700" />
-              )
-            }
-            aria-label={'Toggle Navigation'}
-            variant={'ghost'}
-          /> */}
-        </Flex>
+        />
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Image
             src="/images/icon_3.svg"
@@ -63,16 +47,16 @@ export default function WithSubnavigation() {
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
-          spacing={6}
+          gap={6}
         >
           <Button
-            leftIcon={<SiWhatsapp />}
+            variant="plain"
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
             fontWeight={600}
+            lineHeight="1.2"
             color={'white'}
             bg={'#25D366'}
-            href={'#'}
             _hover={{
               bg: '#25D368',
             }}
@@ -87,21 +71,24 @@ export default function WithSubnavigation() {
               })
             }
           >
+            <SiWhatsapp />
             WhatsApp
           </Button>
         </Stack>
       </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
+      <Collapsible.Root open={open}>
+        <Collapsible.Content>
+          <MobileNav />
+        </Collapsible.Content>
+      </Collapsible.Root>
     </Box>
   );
 }
 
 const DesktopNav = () => {
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} gap={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Link
@@ -134,16 +121,16 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { onToggle } = useDisclosure();
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
+    <Stack gap={4} onClick={children && onToggle}>
+      <Link
         py={2}
-        as={Link}
         href={href ?? '#'}
-        justify={'space-between'}
-        align={'center'}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
         _hover={{
           textDecoration: 'none',
         }}
@@ -151,7 +138,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         <Text fontWeight={600} color={'gray.600'}>
           {label}
         </Text>
-      </Flex>
+      </Link>
     </Stack>
   );
 };
