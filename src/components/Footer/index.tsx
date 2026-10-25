@@ -15,7 +15,6 @@ import {
   onFacebookClicked,
   onInstagramClicked,
   onPaulineClicked,
-  onMohammadClicked,
   onEmailAddressClicked,
 } from '@utils/tracking';
 import { ExternalLinkIcon, PhoneIcon, EmailIcon } from '@chakra-ui/icons'
@@ -84,7 +83,7 @@ export default function LargeWithNewsletter() {
               </Text>
             </Box>
             <Text fontSize={'sm'}>
-              © 2021 Classics0105. All rights reserved
+              © 2026 Classics0105. All rights reserved
             </Text>
             <Stack direction={'row'} spacing={6}>
               <SocialButton
@@ -111,14 +110,6 @@ export default function LargeWithNewsletter() {
               href={'tel:91841433'}
             >
               <PhoneIcon mx="2px" /> Ms. Pauline (9184 1433) 
-            </Link>
-
-            <Link
-              onClick={() => onMohammadClicked()}
-              fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
-              href={'tel:91231952'}
-            >
-              <PhoneIcon mx="2px" /> Mr. Mohammad (9123 1952) 
             </Link>
 
             <ListHeader>Email</ListHeader>
