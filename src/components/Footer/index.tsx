@@ -112,10 +112,6 @@ export default function LargeWithNewsletter() {
               <PhoneIcon mx="2px" /> Ms. Pauline (9184 1433) 
             </Link>
 
-            <Text fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}>
-              Mr. Mohammad
-            </Text>
-
             <ListHeader>Email</ListHeader>
             <Link
               onClick={() => onEmailAddressClicked()}
