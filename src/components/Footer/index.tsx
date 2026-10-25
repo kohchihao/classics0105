@@ -11,24 +11,16 @@ import {
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
-import {
-  onFacebookClicked,
-  onInstagramClicked,
-  onPaulineClicked,
-  onEmailAddressClicked,
-} from '@utils/tracking';
 import { ExternalLinkIcon, PhoneIcon, EmailIcon } from '@chakra-ui/icons'
 
 const SocialButton = ({
   children,
   label,
   href,
-  onClick,
 }: {
   children: ReactNode;
   label: string;
   href: string;
-  onClick: any;
 }) => {
   return (
     <chakra.button
@@ -47,7 +39,6 @@ const SocialButton = ({
         bg: 'blackAlpha.200',
       }}
       target={'blank'}
-      onClick={onClick}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
@@ -89,14 +80,12 @@ export default function LargeWithNewsletter() {
               <SocialButton
                 label={'Facebook'}
                 href={'https://www.facebook.com/classics0105/'}
-                onClick={() => onFacebookClicked()}
               >
                 <FaFacebook />
               </SocialButton>
               <SocialButton
                 label={'Instagram'}
                 href={'https://instagram.com/classics0105'}
-                onClick={() => onInstagramClicked()}
               >
                 <FaInstagram />
               </SocialButton>
@@ -105,7 +94,6 @@ export default function LargeWithNewsletter() {
           <Stack align={'flex-start'}>
             <ListHeader>Operating Hotline</ListHeader>
             <Link
-              onClick={() => onPaulineClicked()}
               fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
               href={'tel:91841433'}
             >
@@ -114,7 +102,6 @@ export default function LargeWithNewsletter() {
 
             <ListHeader>Email</ListHeader>
             <Link
-              onClick={() => onEmailAddressClicked()}
               fontSize={useBreakpointValue({ base: 'sm', md: 'xs' })}
               href="mail:helloclassics0105@gmail.com"
             >

@@ -84,7 +84,6 @@ export default function WithSubnavigation() {
               handleWhatsApp({
                 hp: '91841433',
                 msg: getWhatsAppMessageTemplate(),
-                scenario: 'navbar',
               })
             }
           >
