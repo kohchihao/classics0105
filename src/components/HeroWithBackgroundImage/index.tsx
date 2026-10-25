@@ -24,10 +24,11 @@ export default function WithBackgroundImage() {
       <Box position="absolute" height="100vh" width="100vw" overflow="hidden">
         <Image
           src={backgroundImage}
-          layout="fill"
-          objectFit="cover"
-          quality={50}
           alt="background image"
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
+          quality={50}
           placeholder="blur"
         />
       </Box>

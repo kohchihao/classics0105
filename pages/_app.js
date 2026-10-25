@@ -1,8 +1,9 @@
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
 import { initGA } from '@utils/tracking';
 import React from 'react';
+import Head from 'next/head';
 import SEO from '../next-seo.config';
-import { DefaultSeo } from 'next-seo';
+import { generateDefaultSeo } from 'next-seo/pages';
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -23,7 +24,7 @@ function MyApp({ Component, pageProps }) {
           initialColorMode: 'light',
         }}
       >
-        <DefaultSeo {...SEO} />
+        <Head>{generateDefaultSeo(SEO)}</Head>
         <Component {...pageProps} />
       </ColorModeProvider>
     </ChakraProvider>
