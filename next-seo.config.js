@@ -1,19 +1,25 @@
 const title = 'Disposal services for Singapore Commercial & Residential | Furniture & 2nd hand | Classics0105';
 const description = 'We provide disposal services from residential units to commercial projects.';
+const siteUrl = 'https://www.classics0105.com.sg';
+const ogTitle = 'Classics0105';
+const ogSubtitle = description;
+const ogImageUrl = `${siteUrl}/api/og?title=${encodeURIComponent(ogTitle)}&subtitle=${encodeURIComponent(ogSubtitle)}`;
 
 const SEO = {
   title,
   description,
-  canonical: 'https://www.classics0105.com.sg',
+  canonical: siteUrl,
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://www.classics0105.com.sg',
+    url: siteUrl,
     title,
     description,
     images: [
       {
-        url: 'https://classics0105.vercel.app/api/og?title=Classics0105&subtitle=We%20provide%20disposal%20services%20from%20residential%20units%20to%20commercial%20projects.',
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
         alt: title,
       },
     ],

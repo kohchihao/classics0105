@@ -14,7 +14,6 @@ import {
   getWhatsAppMessageTemplate,
   getMailTemplate,
 } from '@utils';
-import { onEmailButtonClicked } from '@utils/tracking';
 import Image from 'next/image';
 import backgroundImage from '../../../public/images/background.jpg';
 
@@ -84,7 +83,6 @@ export default function WithBackgroundImage() {
                   handleWhatsApp({
                     hp: '91841433',
                     msg: getWhatsAppMessageTemplate(),
-                    scenario: 'hero',
                   })
                 }
               >
@@ -100,9 +98,6 @@ export default function WithBackgroundImage() {
                 colorScheme="blue"
                 href={getMailTemplate()}
                 rounded={'full'}
-                onClick={() => {
-                  onEmailButtonClicked();
-                }}
               >
                 Email
               </Button>
