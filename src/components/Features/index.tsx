@@ -5,7 +5,6 @@ import {
   Text,
   Stack,
   Flex,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 import { FaFileContract } from 'react-icons/fa';
 import { GiHouse } from 'react-icons/gi';
@@ -58,12 +57,12 @@ export default function SimpleThreeColumns() {
         color={'black'}
         fontWeight={700}
         lineHeight={1.2}
-        fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}
+        fontSize={{ base: '3xl', md: '4xl' }}
         pb={6}
       >
         Services we provide
       </Text>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap={10}>
         <Feature
           icon={<Icon as={GiHouse} w={10} h={10} color="black" />}
           title={'Disposal of furniture, appliances, and any recyclable items'}

@@ -1,9 +1,10 @@
-import { Text, Stack, Button, Box, Link } from '@chakra-ui/react';
+import { Text, Stack, Button, Box } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Custom404 = () => {
   return (
-    <Stack justify="center" align="center" flexDir="column" mt="50" spacing={4}>
+    <Stack justify="center" align="center" flexDir="column" pt="50px" gap={4}>
       <Box>
         <Image
           src="/images/404.svg"
@@ -15,7 +16,16 @@ const Custom404 = () => {
 
       <Text fontWeight={500}>Oh no!</Text>
       <Text>This page could not be found</Text>
-      <Button colorScheme="teal" as={Link} href="/">Return to home page</Button>
+      <Button
+        variant="plain"
+        bg="teal.500"
+        color="white"
+        _hover={{ bg: 'teal.600' }}
+        _active={{ bg: 'teal.700' }}
+        asChild
+      >
+        <Link href="/">Return to home page</Link>
+      </Button>
     </Stack>
   );
 };

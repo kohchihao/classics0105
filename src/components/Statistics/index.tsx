@@ -3,9 +3,6 @@ import {
   chakra,
   SimpleGrid,
   Stat,
-  StatLabel,
-  StatNumber,
-  useColorModeValue,
   Text,
 } from '@chakra-ui/react';
 import damaipri from '../../../public/images/damai-primary-school.jpg';
@@ -23,21 +20,22 @@ interface StatsCardProps {
 function StatsCard(props: StatsCardProps) {
   const { title, stat } = props;
   return (
-    <Stat
+    <Stat.Root
       px={{ base: 4, md: 8 }}
       py={'5'}
       shadow={'xl'}
       border={'1px solid'}
-      borderColor={useColorModeValue('gray.800', 'gray.500')}
+      borderColor="gray.800"
       rounded={'lg'}
+      gap="0"
     >
-      <StatLabel fontWeight={'medium'} isTruncated>
+      <Stat.Label fontWeight={'medium'} fontSize="sm" lineHeight="1.5" color="inherit">
         {title}
-      </StatLabel>
-      <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
+      </Stat.Label>
+      <Stat.ValueText fontSize={'2xl'} fontWeight={'medium'} lineHeight="1.5" letterSpacing="normal">
         {stat}
-      </StatNumber>
-    </Stat>
+      </Stat.ValueText>
+    </Stat.Root>
   );
 }
 
@@ -58,7 +56,7 @@ export default function BasicStatistics() {
       >
         How is our company doing?
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+      <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 5, lg: 8 }}>
         <StatsCard
           title={'We cleared over'}
           stat={' 300 schools & offices 🏫'}
@@ -67,7 +65,7 @@ export default function BasicStatistics() {
         <StatsCard title={'In'} stat={'the past 5 years 🕔'} />
       </SimpleGrid>
 
-      <SimpleGrid mt={10} columns={{ base: 2, md: 4, lg: 6 }} spacing={10}>
+      <SimpleGrid mt={10} columns={{ base: 2, md: 4, lg: 6 }} gap={10}>
         <OrganizationImage src={damaipri} />
         <OrganizationImage src={jurongwestsec} />
         <OrganizationImage src={outramsec} />
