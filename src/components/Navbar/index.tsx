@@ -51,6 +51,7 @@ export default function WithSubnavigation() {
             width={150}
             height={30}
             alt="Company Icon"
+            unoptimized
           />
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
