@@ -5,12 +5,13 @@ import Footer from '@components/Footer';
 import Features from '@components/Features';
 import { Box } from '@chakra-ui/react';
 import Statistics from '@components/Statistics';
+import { getSiteOrigin, PRODUCTION_URL } from '@utils/siteUrl';
 
-const siteUrl = 'https://www.classics0105.com.sg';
+const siteUrl = PRODUCTION_URL;
 const title = 'Furniture & Waste Disposal Singapore | Classics0105';
 const description =
   'Furniture & waste disposal in Singapore for residential units and commercial projects, from offices to schools. Call or WhatsApp Classics0105 at +65 9184 1433.';
-const ogImage = `${siteUrl}/og.jpg`;
+const ogImage = `${getSiteOrigin()}/og.jpg`;
 
 const localBusiness = {
   '@context': 'https://schema.org',
