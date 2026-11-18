@@ -3,8 +3,9 @@ import Image from 'next/image';
 
 type Props = {
   src: any;
+  alt: string;
 };
-const OrganizationImage = ({ src }: Props) => {
+const OrganizationImage = ({ src, alt }: Props) => {
   return (
     <Box
       width={{ base: '120px', lg: '150px' }}
@@ -12,7 +13,15 @@ const OrganizationImage = ({ src }: Props) => {
       alignItems="center"
       justifyContent="center"
     >
-      <Image src={src} quality={50} alt="background image" placeholder="blur" />
+      {/* Matches the box width above (lg = 62em in src/theme.ts). Without
+          sizes, next/image serves a 2x copy of the 2550px source at w=3840. */}
+      <Image
+        src={src}
+        quality={50}
+        alt={alt}
+        placeholder="blur"
+        sizes="(min-width: 62em) 150px, 120px"
+      />
     </Box>
   );
 };

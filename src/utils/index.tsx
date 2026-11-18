@@ -1,8 +1,9 @@
-export const handleWhatsApp = ({ hp, msg }: { hp: string; msg: string }) => {
-  // https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat/?lang=en
-  const url = `https://wa.me/65${hp}?text=${msg}`;
-  window.open(url, '_blank'); //to open new page
-};
+// https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat/?lang=en
+export const WHATSAPP_NUMBER = '6591841433';
+
+// Real link (crawlable, works without JS) with the enquiry template prefilled.
+export const getWhatsAppUrl = () =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${getWhatsAppMessageTemplate()}`;
 
 export const getWhatsAppMessageTemplate = () => {
   const text = `Hello, I am interested in your service!\n\n[Who are you?]\n\n[What are you looking to dispose of (Provide an inventory list)?]\n\n[When do you need the items to be disposed?]\n\nPlease attach images in the subsequent messages`;
