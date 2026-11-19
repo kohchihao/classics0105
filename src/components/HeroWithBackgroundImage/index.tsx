@@ -8,11 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { SiWhatsapp } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
-import {
-  handleWhatsApp,
-  getWhatsAppMessageTemplate,
-  getMailTemplate,
-} from '@utils';
+import { getWhatsAppUrl, getMailTemplate } from '@utils';
 import Image from 'next/image';
 import backgroundImage from '../../../public/images/background.jpg';
 
@@ -22,7 +18,7 @@ export default function WithBackgroundImage() {
       <Box position="absolute" height="100vh" width="100vw" overflow="hidden">
         <Image
           src={backgroundImage}
-          alt="background image"
+          alt="Classics0105 furniture and waste disposal services in Singapore"
           fill
           sizes="100vw"
           style={{ objectFit: 'cover' }}
@@ -48,8 +44,7 @@ export default function WithBackgroundImage() {
             lineHeight={1.2}
             fontSize={{ base: '3xl', md: '4xl' }}
           >
-            We provide disposal services from residential units to commercial
-            projects.
+            Furniture &amp; Waste Disposal Services in Singapore
           </Text>
 
           <Stack gap={2} align={'flex-start'}>
@@ -68,6 +63,7 @@ export default function WithBackgroundImage() {
             >
               <Button
                 variant="plain"
+                asChild
                 fontSize={'sm'}
                 fontWeight={600}
                 lineHeight="1.2"
@@ -80,15 +76,15 @@ export default function WithBackgroundImage() {
                   bg: '#25D368',
                 }}
                 rounded={'full'}
-                onClick={() =>
-                  handleWhatsApp({
-                    hp: '91841433',
-                    msg: getWhatsAppMessageTemplate(),
-                  })
-                }
               >
-                <SiWhatsapp />
-                WhatsApp
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiWhatsapp />
+                  WhatsApp
+                </a>
               </Button>
 
               <Button

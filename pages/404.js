@@ -1,10 +1,15 @@
 import { Text, Stack, Button, Box } from '@chakra-ui/react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Custom404 = () => {
   return (
     <Stack justify="center" align="center" flexDir="column" pt="50px" gap={4}>
+      <Head>
+        <title>Page not found | Classics0105</title>
+        <meta name="robots" content="noindex" key="robots" />
+      </Head>
       <Box>
         <Image
           src="/images/404.svg"

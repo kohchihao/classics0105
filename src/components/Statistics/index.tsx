@@ -48,14 +48,14 @@ export default function BasicStatistics() {
       px={{ base: 5, sm: 12, md: 17 }}
       pb={20}
     >
-      <chakra.h1
+      <chakra.h2
         textAlign={'center'}
         fontSize={'4xl'}
         py={10}
         fontWeight={'bold'}
       >
         How is our company doing?
-      </chakra.h1>
+      </chakra.h2>
       <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 5, lg: 8 }}>
         <StatsCard
           title={'We cleared over'}
@@ -66,12 +66,30 @@ export default function BasicStatistics() {
       </SimpleGrid>
 
       <SimpleGrid mt={10} columns={{ base: 2, md: 4, lg: 6 }} gap={10}>
-        <OrganizationImage src={damaipri} />
-        <OrganizationImage src={jurongwestsec} />
-        <OrganizationImage src={outramsec} />
-        <OrganizationImage src={punggolsec} />
-        <OrganizationImage src={anchorgreenpri} />
-        <OrganizationImage src={chijpri} />
+        <OrganizationImage
+          src={damaipri}
+          alt="Damai Primary School logo, a Classics0105 disposal client in Singapore"
+        />
+        <OrganizationImage
+          src={jurongwestsec}
+          alt="Jurong West Secondary School logo, a Classics0105 disposal client in Singapore"
+        />
+        <OrganizationImage
+          src={outramsec}
+          alt="Outram Secondary School logo, a Classics0105 disposal client in Singapore"
+        />
+        <OrganizationImage
+          src={punggolsec}
+          alt="Punggol Secondary School logo, a Classics0105 disposal client in Singapore"
+        />
+        <OrganizationImage
+          src={anchorgreenpri}
+          alt="Anchor Green Primary School logo, a Classics0105 disposal client in Singapore"
+        />
+        <OrganizationImage
+          src={chijpri}
+          alt="CHIJ Our Lady of Good Counsel logo, a Classics0105 disposal client in Singapore"
+        />
       </SimpleGrid>
       <Text mt={5} textAlign="center" fontSize={'xs'} color={'gray.600'}>
         and many more :)

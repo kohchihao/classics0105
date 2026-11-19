@@ -9,7 +9,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { SiWhatsapp } from 'react-icons/si';
-import { handleWhatsApp, getWhatsAppMessageTemplate } from '@utils';
+import { getWhatsAppUrl } from '@utils';
 import Image from 'next/image';
 
 export default function WithSubnavigation() {
@@ -51,6 +51,7 @@ export default function WithSubnavigation() {
         >
           <Button
             variant="plain"
+            asChild
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
             fontWeight={600}
@@ -64,15 +65,11 @@ export default function WithSubnavigation() {
               bg: '#25D368',
             }}
             rounded={'full'}
-            onClick={() =>
-              handleWhatsApp({
-                hp: '91841433',
-                msg: getWhatsAppMessageTemplate(),
-              })
-            }
           >
-            <SiWhatsapp />
-            WhatsApp
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
+              <SiWhatsapp />
+              WhatsApp
+            </a>
           </Button>
         </Stack>
       </Flex>

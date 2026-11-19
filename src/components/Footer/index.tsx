@@ -106,7 +106,7 @@ export default function LargeWithNewsletter() {
             <ListHeader>Operating Hotline</ListHeader>
             <Link
               fontSize={{ base: 'sm', md: 'xs' }}
-              href={'tel:91841433'}
+              href={'tel:+6591841433'}
             >
               <PhoneIcon mx="2px" /> Ms. Pauline (9184 1433) 
             </Link>
@@ -114,7 +114,7 @@ export default function LargeWithNewsletter() {
             <ListHeader>Email</ListHeader>
             <Link
               fontSize={{ base: 'sm', md: 'xs' }}
-              href="mail:helloclassics0105@gmail.com"
+              href="mailto:helloclassics0105@gmail.com"
             >
                <EmailIcon mx="2px" /> helloclassics0105@gmail.com
             </Link>
@@ -123,9 +123,10 @@ export default function LargeWithNewsletter() {
             <ListHeader>Location</ListHeader>
             <Link
               fontSize={{ base: 'sm', md: 'xs' }}
-              href="https://goo.gl/maps/EwX3UQTkTw1eLhnJ6"
+              href="https://www.google.com/maps/search/?api=1&query=Block+6+Marsiling+Industrial+Estate+Road+1+Singapore+739275"
             >
-              6 Sungei Kadut Ave <ExternalLinkIcon mx="2px" />
+              Block 6, Marsiling Industrial Estate Road 1, #01-06, Singapore
+              739275 <ExternalLinkIcon mx="2px" />
             </Link>
           </Stack>
         </SimpleGrid>

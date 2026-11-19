@@ -54,6 +54,7 @@ export default function SimpleThreeColumns() {
       backgroundColor=""
     >
       <Text
+        as="h2"
         color={'black'}
         fontWeight={700}
         lineHeight={1.2}
